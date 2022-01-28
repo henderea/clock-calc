@@ -1,0 +1,53 @@
+{
+  "name": "clock-calc",
+  "version": "1.0.0",
+  "description": "Clock calculator",
+  "main": "",
+  "scripts": {
+    "prod": "yarn build && yarn serve:prod",
+    "serve:prod": "serve dist",
+    "serve:dev": "browser-sync start --server build --files build",
+    "start": "concurrently \"sleep 5 && yarn serve:dev\" \"yarn watch\" --names \"💻,📦\" --prefix name",
+    "build": "static-site-builder build",
+    "now-build": "static-site-builder build",
+    "watch": "static-site-builder watch",
+    "clean": "rm -rf dist build",
+    "deploy": "vercel --prod -C"
+  },
+  "author": "henderea",
+  "license": "ISC",
+  "repository": "",
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/eslint-parser": "^7.16.5",
+    "@henderea/static-site-builder": "^1.10.2",
+    "@types/jquery": "^3.5.13",
+    "@types/lodash": "^4.14.178",
+    "browser-sync": "^2.27.7",
+    "concurrently": "^6.5.1",
+    "eslint": "^8.7.0",
+    "eslint-config-henderea": "1.0.12",
+    "eslint-plugin-import": "^2.25.4",
+    "md5": "^2.3.0",
+    "serve": "^13.0.2",
+    "vercel": "^23.1.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.1",
+    "lodash": "^4.17.21"
+  },
+  "htmlMeta": {
+    "type": "",
+    "title": "",
+    "description": "",
+    "siteName": "JS Demos - henderea.com",
+    "icon": "gravatar:henderea@gmail.com",
+    "image": null,
+    "themeColor": "#000000"
+  },
+  "homepage": "/",
+  "eslintConfig": {
+    "extends": "henderea"
+  }
+}
